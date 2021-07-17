@@ -125,14 +125,16 @@ function createMap(earthquakes) {
 
   // color function to be used when creating the legend
   function getColor(d) {
-    return d > 5 ? '#ff3333' :
-           d > 4  ? '#ff6633' :
-           d > 3  ? '#ff9933' :
-           d > 2  ? '#ffcc33' :
-           d > 1  ? '#ffff33' :
+    return d > 90 ? '#E31A1C' :
+           d > 70 ? '#ff3333' :
+           d > 50  ? '#ff6633' :
+           d > 30  ? '#ff9933' :
+           d > 10  ? '#ffcc33' :
+           d > -10 ? '#ffff33' :
                     '#ccff33';
   }
 
+  
 // Add legend to the map
   var legend = L.control({position: 'bottomright'});
   
@@ -140,6 +142,7 @@ function createMap(earthquakes) {
   
       var div = L.DomUtil.create('div', 'info legend'),
        mags = [-10, 10, 30, 50, 70, 90],
+    //   mags = [1, 2, 3, 4, 5],
          labels = [];
 
           
@@ -153,4 +156,5 @@ function createMap(earthquakes) {
   };
   
   legend.addTo(myMap);
+
 }
