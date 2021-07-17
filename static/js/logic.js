@@ -142,7 +142,6 @@ function createMap(earthquakes) {
   
       var div = L.DomUtil.create('div', 'info legend'),
        mags = [-10, 10, 30, 50, 70, 90],
-    //   mags = [1, 2, 3, 4, 5],
          labels = [];
 
           
